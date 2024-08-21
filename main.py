@@ -45,6 +45,13 @@ def main():
             if collides:
                 print('Game over!')
                 sys.exit()
+
+            for s in shots:
+                collides = s.collides(a)
+                if collides:
+                    a.kill()
+                    s.kill()
+
         pygame.display.flip()
 
         dt = clock.tick(60) / 1000
